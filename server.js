@@ -15,10 +15,11 @@ const postRoute = require("./routes/posts")
 // App configs
 dotenv.config()
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 3000;
+const url = "mongodb+srv://khikhimedia:samosaman9@khikicluster0.fud56.mongodb.net/?retryWrites=true&w=majority";
 
 // DB Connection
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true })
+mongoose.connect(url, { useNewUrlParser: true })
     .then(() => console.log('Connected to mongodb'))
     .catch((err) => console.log(err))
 
